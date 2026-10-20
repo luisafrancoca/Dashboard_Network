@@ -1,0 +1,21 @@
+timestamp,device_id,device_name,region,latency_ms,bandwidth_mbps,packet_loss_pct,cpu_usage_pct,memory_usage_pct,status
+2026-01-01 00:00:00,RTR-001,Router Norte,North,12.5,850,0.02,45,62,UP
+2026-01-01 00:00:00,RTR-002,Router Sur,South,18.3,720,0.05,52,68,UP
+2026-01-01 00:00:00,SW-001,Switch Centro,Center,8.2,950,0.01,38,55,UP
+2026-01-01 00:00:00,SW-002,Switch Este,East,15.7,780,0.08,61,72,UP
+2026-01-01 00:00:00,FW-001,Firewall Principal,Center,5.1,1200,0.00,42,58,UP
+2026-01-01 01:00:00,RTR-001,Router Norte,North,13.2,840,0.03,47,63,UP
+2026-01-01 01:00:00,RTR-002,Router Sur,South,22.1,680,0.12,58,71,WARNING
+2026-01-01 01:00:00,SW-001,Switch Centro,Center,7.9,960,0.01,36,54,UP
+2026-01-01 01:00:00,SW-002,Switch Este,East,16.3,770,0.09,63,74,UP
+2026-01-01 01:00:00,FW-001,Firewall Principal,Center,5.3,1180,0.00,44,59,UP
+2026-01-01 02:00:00,RTR-001,Router Norte,North,11.8,870,0.01,43,61,UP
+2026-01-01 02:00:00,RTR-002,Router Sur,South,28.5,620,0.25,72,82,CRITICAL
+2026-01-01 02:00:00,SW-001,Switch Centro,Center,8.5,940,0.02,39,56,UP
+2026-01-01 02:00:00,SW-002,Switch Este,East,14.9,790,0.07,59,70,UP
+2026-01-01 02:00:00,FW-001,Firewall Principal,Center,5.0,1210,0.00,41,57,UP
+2026-01-01 03:00:00,RTR-001,Router Norte,North,12.1,860,0.02,44,62,UP
+2026-01-01 03:00:00,RTR-002,Router Sur,South,19.7,700,0.06,55,69,UP
+2026-01-01 03:00:00,SW-001,Switch Centro,Center,8.1,955,0.01,37,55,UP
+2026-01-01 03:00:00,SW-002,Switch Este,East,15.2,785,0.08,60,71,UP
+2026-01-01 03:00:00,FW-001,Firewall Principal,Center,5.2,1195,0.00,43,58,UP
