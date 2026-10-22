@@ -1,0 +1,10 @@
+__pycache__/
+*.py[cod]
+*$py.class
+.pytest_cache/
+.tox/
+.venv/
+venv/
+.env
+.DS_Streamlit
+streamlit_logs/

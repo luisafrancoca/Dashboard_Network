@@ -175,49 +175,61 @@ def render_charts(df: pd.DataFrame) -> None:
     col1, col2 = st.columns(2)
 
     with col1:
-        fig_latency = px.line(
-            df.sort_values("timestamp"),
-            x="timestamp",
-            y="latency_ms",
-            color="device_id",
-            title="Latencia por dispositivo",
-        )
-        fig_latency.update_layout(template="plotly_dark")
-        st.plotly_chart(fig_latency, use_container_width=True)
+        if not df.empty:
+            fig_latency = px.line(
+                df.sort_values("timestamp"),
+                x="timestamp",
+                y="latency_ms",
+                color="device_id",
+                title="Latencia por dispositivo",
+            )
+            fig_latency.update_layout(template="plotly_dark")
+            st.plotly_chart(fig_latency, use_container_width=True)
+        else:
+            st.info("No hay datos para mostrar en el gráfico de latencia.")
 
     with col2:
-        fig_cpu = px.bar(
-            df.groupby("device_id", as_index=False)["cpu_usage_pct"].mean(),
-            x="device_id",
-            y="cpu_usage_pct",
-            title="Uso de CPU medio por dispositivo",
-        )
-        fig_cpu.update_layout(template="plotly_dark")
-        st.plotly_chart(fig_cpu, use_container_width=True)
+        if not df.empty:
+            fig_cpu = px.bar(
+                df.groupby("device_id", as_index=False)["cpu_usage_pct"].mean(),
+                x="device_id",
+                y="cpu_usage_pct",
+                title="Uso de CPU medio por dispositivo",
+            )
+            fig_cpu.update_layout(template="plotly_dark")
+            st.plotly_chart(fig_cpu, use_container_width=True)
+        else:
+            st.info("No hay datos para mostrar en el gráfico de CPU.")
 
     col3, col4 = st.columns(2)
 
     with col3:
-        fig_bw = px.line(
-            df.sort_values("timestamp"),
-            x="timestamp",
-            y="bandwidth_mbps",
-            color="device_id",
-            title="Ancho de banda por dispositivo",
-        )
-        fig_bw.update_layout(template="plotly_dark")
-        st.plotly_chart(fig_bw, use_container_width=True)
+        if not df.empty:
+            fig_bw = px.line(
+                df.sort_values("timestamp"),
+                x="timestamp",
+                y="bandwidth_mbps",
+                color="device_id",
+                title="Ancho de banda por dispositivo",
+            )
+            fig_bw.update_layout(template="plotly_dark")
+            st.plotly_chart(fig_bw, use_container_width=True)
+        else:
+            st.info("No hay datos para mostrar en el gráfico de ancho de banda.")
 
     with col4:
         region_metrics = get_metrics_by_region(df)
-        fig_region = px.bar(
-            region_metrics,
-            x="region",
-            y="latency_ms",
-            title="Latencia media por región",
-        )
-        fig_region.update_layout(template="plotly_dark")
-        st.plotly_chart(fig_region, use_container_width=True)
+        if not region_metrics.empty:
+            fig_region = px.bar(
+                region_metrics,
+                x="region",
+                y="latency_ms",
+                title="Latencia media por región",
+            )
+            fig_region.update_layout(template="plotly_dark")
+            st.plotly_chart(fig_region, use_container_width=True)
+        else:
+            st.info("No hay datos para mostrar en el gráfico de latencia por región.")
 
 
 def render_table(df: pd.DataFrame) -> None:
