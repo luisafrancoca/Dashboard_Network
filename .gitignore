@@ -8,3 +8,5 @@ venv/
 .env
 .DS_Streamlit
 streamlit_logs/
+streamlit_test.log
+*.log
